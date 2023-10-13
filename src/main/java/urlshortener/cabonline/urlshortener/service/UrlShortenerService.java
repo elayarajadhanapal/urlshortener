@@ -28,7 +28,7 @@ public class UrlShortenerService {
     private void saveUrlShortenerDetails(String shortenedUrl, String url) {
         var value = repository.saveUrlShortenerDetails(shortenedUrl, url);
         if (null == value){
-            new Exception("Server error. Unable to save the url and shortened url ");
+            throw new UrlShortenerNotFoundException("Server error. Unable to save the url and shortened url ");
         }
     }
 

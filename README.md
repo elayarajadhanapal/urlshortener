@@ -13,8 +13,20 @@ Using IDE (IntelliJ):
 Click on file -> Project from Version Control
 Give clone URL: 
 
+```
+https://github.com/elayarajadhanapal/urlshortener.git
+```
+
 Once the project is cloned, all the dependencies will be downloaded automatically.
 Make sure you have internet connectivity or if using proxy, please enable the proxy in the IDE proxy settings.
+
+
+Or if you have the git installed locally you can clone it with
+```
+git clone https://github.com/elayarajadhanapal/urlshortener.git
+```
+
+And import the project into your favourite IDE.
 
 Using maven command:
 
