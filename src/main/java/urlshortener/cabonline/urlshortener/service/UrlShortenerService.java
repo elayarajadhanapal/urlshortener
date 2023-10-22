@@ -38,15 +38,18 @@ public class UrlShortenerService {
 
     private String generateShortenedUrl(int counter){
         String shortenedUrl = null;
-        if (counter<=5){
+        while(counter<=5){
             logger.debug("Counter {} and shortened URL len {}", counter, shortenedUrlLength);
             shortenedUrl = RandomStringUtils.randomAlphanumeric(shortenedUrlLength);
             if(isShortenedUrlPresentInTheMap(shortenedUrl)){
-                generateShortenedUrl(counter++);
+                if (counter == 5){
+                    shortenedUrlLength++;
+                    counter = 0;
+                }
+                counter++;
+            }else{
+                return shortenedUrl;
             }
-        }else {
-            shortenedUrlLength++;
-            generateShortenedUrl(0);
         }
         return shortenedUrl;
     }
